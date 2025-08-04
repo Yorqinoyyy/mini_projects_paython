@@ -1,25 +1,43 @@
-tasks = []
-while True:
-    print("\n--- To-Do List ---")
-    print("1. Vazifa qo'shish")
-    print("2. Vazifalarni ko'rish")
-    print("3. Chiqish")
+# To-Do List mini project
+# Ushbu dastur foydalanuvchiga vazifalar qo‘shish, ko‘rish va o‘chirish imkonini beradi.
 
-   tanlov = input("Tanlovingizni kiriting (1/2/3): ")
+def to_do_list():
+    tasks = []  # Vazifalarni saqlash uchun bo'sh ro'yxat
 
-    if tanlov == "1":
-        vazifa = input("Vazifani kiriting: ")
-        tasks.append(vazifa)
-        print(f"✅ '{vazifa}' ro'yxatga qo'shildi.")
-    elif tanlov == "2":
-        if tasks:
-            print("\n📋 Vazifalar:")
-            for i, vazifa in enumerate(tasks, 1):
-                print(f"{i}. {vazifa}")
+    while True:
+        print("\n--- To-Do List ---")
+        print("1. Vazifa qo'shish")
+        print("2. Vazifalarni ko'rish")
+        print("3. Vazifani o'chirish")
+        print("4. Chiqish")
+
+        choice = input("Tanlovingiz (1-4): ")
+
+        if choice == '1':
+            task = input("Yangi vazifani kiriting: ")
+            tasks.append(task)
+            print(f"✅ Vazifa qo'shildi: {task}")
+        elif choice == '2':
+            if tasks:
+                print("\n📋 Vazifalar:")
+                for i, task in enumerate(tasks, 1):
+                    print(f"{i}. {task}")
+            else:
+                print("❌ Vazifalar yo‘q.")
+        elif choice == '3':
+            if tasks:
+                index = int(input("O'chirish uchun vazifa raqamini kiriting: ")) - 1
+                if 0 <= index < len(tasks):
+                    removed = tasks.pop(index)
+                    print(f"🗑️ O‘chirildi: {removed}")
+                else:
+                    print("❌ Noto‘g‘ri raqam!")
+            else:
+                print("❌ Vazifalar yo‘q.")
+        elif choice == '4':
+            print("👋 Dasturdan chiqildi.")
+            break
         else:
-            print("❌ Hozircha vazifalar yo'q.")
-    elif tanlov == "3":
-        print("Chiqilmoqda...")
-        break
-    else:
-        print("❌ Noto'g'ri tanlov!")
+            print("❌ Noto‘g‘ri tanlov!")
+
+to_do_list()
