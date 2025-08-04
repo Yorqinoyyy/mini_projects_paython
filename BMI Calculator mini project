@@ -1,0 +1,21 @@
+# ⚖️ BMI (Body Mass Index) Calculator mini project
+# Foydalanuvchidan vazn va bo‘y qabul qilib, BMI hisoblab chiqaradi va kategoriyani ko‘rsatadi.
+
+def bmi_calculator():
+    print("⚖️ BMI Calculator")
+    weight = float(input("Vazningizni kiriting (kg): "))
+    height = float(input("Bo‘yingizni kiriting (metr): "))
+
+    bmi = weight / (height ** 2)
+    print(f"Sizning BMI: {bmi:.2f}")
+
+    if bmi < 18.5:
+        print("📌 Holat: Ozg‘in")
+    elif 18.5 <= bmi < 24.9:
+        print("📌 Holat: Normal")
+    elif 25 <= bmi < 29.9:
+        print("📌 Holat: Ortiqcha vazn")
+    else:
+        print("📌 Holat: Semizlik")
+
+bmi_calculator()
