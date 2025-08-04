@@ -1,46 +1,30 @@
+# 🧮 Calculator mini project
+# Ushbu dastur foydalanuvchidan 2 ta son va amalni qabul qiladi va natijani hisoblab beradi.
+
 def calculator():
-    print("📌 Oddiy kalkulyatorga xush kelibsiz!")
-    print("Amallar: +  qo'shish | -  ayirish | *  ko'paytirish | /  bo'lish | %  qoldiq | **  daraja")
-    print("Chiqish uchun 'exit' deb yozing.")
+    print("🧮 Simple Calculator")
+    print("Available operations: +, -, *, /")
 
-    while True:
-        amal = input("\nAmalni kiriting (+, -, *, /, %, **): ").strip()
+    # Foydalanuvchidan sonlar va amal olish
+    x = float(input("Birinchi sonni kiriting: "))
+    y = float(input("Ikkinchi sonni kiriting: "))
+    amal = input("Amalni tanlang (+, -, *, /): ")
 
-        if amal.lower() == "exit":
-            print("✅ Kalkulyatordan chiqildi. Xayr!")
-            break
+    # Amallarni tekshirish
+    if amal == '+':
+        print(f"Natija: {x + y}")
+    elif amal == '-':
+        print(f"Natija: {x - y}")
+    elif amal == '*':
+        print(f"Natija: {x * y}")
+    elif amal == '/':
+        if y != 0:
+            print(f"Natija: {x / y}")
+        else:
+            print("Xatolik: Nolga bo‘lish mumkin emas!")
+    else:
+        print("Xatolik: Noto‘g‘ri amal kiritildi.")
 
-        if amal not in ['+', '-', '*', '/', '%', '**']:
-            print("❌ Noto'g'ri amal! Qayta urinib ko'ring.")
-            continue
-
-        try:
-            x = float(input("Birinchi sonni kiriting: "))
-            y = float(input("Ikkinchi sonni kiriting: "))
-
-            if amal == '+':
-                natija = x + y
-            elif amal == '-':
-                natija = x - y
-            elif amal == '*':
-                natija = x * y
-            elif amal == '/':
-                if y != 0:
-                    natija = x / y
-                else:
-                    print("❌ Nolga bo'lish mumkin emas!")
-                    continue
-            elif amal == '%':
-                natija = x % y
-            elif amal == '**':
-                natija = x ** y
-
-            print(f"✅ Natija: {x} {amal} {y} = {natija}")
-
-        except ValueError:
-            print("❌ Faqat son kiriting!")
-
-# Dastur ishga tushadi
 calculator()
 📌MISOL:
 Oddiy kalkulyatorga xush kelibsiz!
