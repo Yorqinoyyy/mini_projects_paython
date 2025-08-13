@@ -1,4 +1,4 @@
-# ⚖️ BMI (Body Mass Index) Calculator mini project
+#  BMI (Body Mass Index) Calculator mini project
 # Foydalanuvchidan vazn va bo‘y qabul qilib, BMI hisoblab chiqaradi va kategoriyani ko‘rsatadi.
 
 def bmi_calculator():
